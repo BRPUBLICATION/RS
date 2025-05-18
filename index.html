@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Pharma Solutions |REGULUS SERVICES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a0e1;
+            --accent: #ff6b6b;
+            --dark: #1a2a3a;
+            --light: #f8f9fa;
+            --pharma-blue: #0078d7;
+            --pharma-green: #4caf50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 0.5rem 5%;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: var(--pharma-blue);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--pharma-blue);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--pharma-blue);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--pharma-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/rV6kNK2/images-13.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--pharma-blue);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--pharma-blue);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--pharma-blue);
+            border-radius: 2px;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: white;
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--pharma-blue);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Services Preview */
+        .services-preview {
+            background-color: #f5f9ff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .service-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--pharma-blue);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--pharma-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-link:hover {
+            color: var(--primary);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--pharma-blue), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581093450021-4a7360e9a7d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--pharma-blue);
+        }
+        
+        .footer-col p {
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--pharma-blue);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--pharma-blue);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* About Page */
+        .about-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/fYLYVkG3/download-37.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb .separator {
+            margin: 0 5px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-section {
+            background-color: #f5f9ff;
+            padding: 6rem 5%;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .team-info p {
+            color: var(--pharma-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .team-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #f5f9ff;
+            border-radius: 50%;
+            color: var(--pharma-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--pharma-blue);
+            color: white;
+        }
+        
+        /* Services Page */
+        .services-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581093057305-25a0a6b9c0c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .services-sidebar {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .services-sidebar h3 {
+            font-size: 1.3rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .services-menu {
+            list-style: none;
+        }
+        
+        .services-menu li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .services-menu a {
+            display: block;
+            padding: 0.5rem 0;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 10px;
+        }
+        
+        .services-menu a:hover, .services-menu a.active {
+            color: var(--pharma-blue);
+            border-left: 3px solid var(--pharma-blue);
+            padding-left: 15px;
+        }
+        
+        .service-details {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .service-details h2 {
+            font-size: 2rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-details h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        .service-details p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #f5f9ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pharma-blue);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .feature-text p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Contact Page */
+        .contact-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/pBQZLnf4/download-38.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+        
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #f5f9ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pharma-blue);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+        
+        .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--pharma-blue);
+        }
+        
+        .contact-map {
+            height: 100%;
+            min-height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-form h2 {
+            font-size: 2rem;
+            color: var(--pharma-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--pharma-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 120, 215, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            
+            <h1>REGULUS SERVICES </h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Revolutionizing Pharma and Biotech with AI-Driven Services</h1>
+                <p>The pharmaceutical and biotechnology industries are on the cusp of a revolution, driven by the power of Artificial Intelligence (AI). At REGULUS SERVICES, we're harnessing the potential of AI to transform the way we discover, develop, and deliver life-changing treatments.</p>
+                <div>
+                    <a href="#contact" class="btn">Get Started</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+       <!-- Benefits Section -->
+<section class="section benefits">
+  <div class="section-title">
+    <h2>Benefits of AI in Pharma and Biotech</h2>
+    <p>AI is transforming the pharma and biotech industry in numerous ways</p>
+  </div>
+  <div class="benefits-container">
+    
+    <div class="benefit-card">
+      <div class="benefit-image">
+        <img src="https://i.ibb.co/KjrRkgj6/download-34.jpg" alt="Accelerated Innovation">
+      </div>
+      <h3>Accelerated Innovation</h3>
+      <p>AI-driven insights and predictions enable faster and more efficient discovery and development of new treatments.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-image">
+        <img src="https://i.ibb.co/WNGP5VS8/th-2.jpg" alt="Improved Efficiency">
+      </div>
+      <h3>Improved Efficiency</h3>
+      <p>AI automates manual tasks, streamlines processes, and optimizes resources, reducing costs and timelines.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-image">
+        <img src="https://i.ibb.co/yBFJ083K/images-9.jpg" alt="Enhanced Accuracy">
+      </div>
+      <h3>Enhanced Accuracy</h3>
+      <p>AI-powered analytics and predictions minimize errors and improve decision-making.</p>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="benefit-image">
+        <img src="https://i.ibb.co/7tnGXcny/images-10.jpg" alt="Personalized Medicine">
+      </div>
+      <h3>Personalized Medicine</h3>
+      <p>AI-driven approaches enable tailored treatments and improved patient outcomes.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+        <!-- Services Preview Section -->
+        <section class="section services-preview">
+            <div class="section-title">
+                <h2>Our AI-Driven Services</h2>
+                <p>We offer a comprehensive range of AI-driven services designed to support pharma and biotech companies</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://i.ibb.co/35SdFgG1/download-38.jpg" alt="Drug Discovery">
+                    </div>
+                    <div class="service-content">
+                        <h3>Drug Discovery and Development</h3>
+                        <p>AI-powered target identification, lead generation, and molecular design to accelerate your drug discovery pipeline.</p>
+                        <a href="#services" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src=https://i.ibb.co/BVZfKtf6/images-11.jpg" alt="Clinical Trials">
+                    </div>
+                    <div class="service-content">
+                        <h3>Clinical Trials</h3>
+                        <p>AI-driven clinical trial prediction, patient stratification, and trial design optimization for faster, more efficient trials.</p>
+                        <a href="#services" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://i.ibb.co/nq1dMg5Y/download-37.jpg" alt="Precision Medicine">
+                    </div>
+                    <div class="service-content">
+                        <h3>Precision Medicine</h3>
+                        <p>AI-driven personalized medicine approaches and genomic analysis for tailored treatments.</p>
+                        <a href="#services" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Unlock the Potential of AI in Pharma and Biotech</h2>
+                <p>Partner with us to discover how AI-driven services can transform your business and bring innovative treatments to market faster.</p>
+                <a href="#contact" class="btn">Contact Us Today</a>
+            </div>
+        </section>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" style="display: none;">
+        <!-- About Hero -->
+        <section class="about-hero">
+            <h1>About Us</h1>
+            <div class="breadcrumb">
+                <a href="#home">Home</a>
+                <span class="separator">/</span>
+                <a href="#about" class="active">About Us</a>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="section">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://i.ibb.co/Jj0wvKbT/download-36.jpg" alt="Our Lab">
+                </div>
+                <div class="about-text">
+                    <h2>Pioneering AI Solutions for Pharma and Biotech</h2>
+                    <p>Founded in 2015, [Company Name] has been at the forefront of applying artificial intelligence to revolutionize drug discovery and development. Our team of experts combines deep knowledge in AI, machine learning, and life sciences to deliver cutting-edge solutions.</p>
+                    <p>We believe that the future of medicine lies at the intersection of technology and biology. By leveraging the power of AI, we're helping pharmaceutical and biotechnology companies accelerate their research, reduce costs, and bring life-saving treatments to patients faster.</p>
+                    <p>Our mission is to transform the drug development pipeline through innovative AI-driven approaches that enhance every stage from target identification to clinical trials.</p>
+                    <a href="#services" class="btn">Learn More About Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="section-title">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the experts driving innovation at RS</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://i.ibb.co/pkS3v0m/Screenshot-2025-05-17-205413.png" alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="team-info">
+                        <h3> Dr Rahul Vadisetty</h3>
+                        <p>DIRECTOR AI</p>
+                  
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://i.ibb.co/dsgGz0Wr/Screenshot-2025-05-15-185114.png" alt="Dr. Michael Chen">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr Harishchander Anandaram </h3>
+                        <p>CTO</p>
+                     
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://i.ibb.co/j2PnJcD/Screenshot-2025-05-16-012710.png" alt="Dr. Priya Patel">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr Ipseeta nanda</h3>
+                        <p>CAA </p>
+                      
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+               
+                   
+                        
+            </div>
+        </section>
+    </section>
+
+ <section id="services" class="services-section">
+  <div class="container">
+    <h1 class="section-title">Our AI-Driven Services</h1>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/pBQZLnf4/download-38.jpg" alt="Drug Discovery" />
+        <h3>Drug Discovery & Development</h3>
+        <p>AI-driven target identification, lead generation, and novel molecule design for faster, more accurate drug development.</p>
+        <ul>
+          <li><strong>Target Identification:</strong> AI analyzes genomic, proteomic, and phenotypic data to identify disease targets.</li>
+          <li><strong>Lead Generation:</strong> Advanced ML generates and optimizes lead compounds.</li>
+          <li><strong>Molecular Design:</strong> AI designs novel molecules with optimal properties.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/sv7SjK9Q/images-11.jpg" alt="Clinical Trials" />
+        <h3>Clinical Trials</h3>
+        <p>Design, optimize, and execute smarter clinical trials using AI-driven predictions and stratification.</p>
+        <ul>
+          <li><strong>Trial Prediction:</strong> AI predicts outcomes by analyzing historical and patient data.</li>
+          <li><strong>Patient Stratification:</strong> ML identifies ideal patient populations.</li>
+          <li><strong>Trial Design Optimization:</strong> AI optimizes sample sizes and endpoints.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/JRqqcyVG/images-10.jpg" alt="Data Analysis" />
+        <h3>Data Analysis & Integration</h3>
+        <p>Unify and analyze multi-omics and clinical data using AI for deeper insights.</p>
+        <ul>
+          <li><strong>Data Integration:</strong> AI combines omics data for biological insights.</li>
+          <li><strong>Biomarker Discovery:</strong> AI identifies biomarkers for diagnosis and treatment response.</li>
+          <li><strong>Predictive Analytics:</strong> AI forecasts disease progression and treatment efficacy.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/k2Sd3q5Y/th-2.jpg" alt="Precision Medicine" />
+        <h3>Precision Medicine</h3>
+        <p>Deliver personalized treatment strategies using patient-specific AI analysis.</p>
+        <ul>
+          <li><strong>Personalized Medicine:</strong> AI tailors treatment based on genomics and history.</li>
+          <li><strong>Genomic Analysis:</strong> AI interprets genetic data for disease predispositions.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/yBZkd1Xj/download-36.jpg" alt="Regulatory Support" />
+        <h3>Regulatory Support</h3>
+        <p>Ensure compliance and streamline documentation using AI-guided regulatory support.</p>
+        <ul>
+          <li><strong>Regulatory Assistance:</strong> AI expedites submissions, reducing review times.</li>
+          <li><strong>Compliance:</strong> Ensures adherence to regulations.</li>
+          <li><strong>Efficiency:</strong> Streamlines administrative processes.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/fYLYVkG3/download-37.jpg" alt="Intellectual Property" />
+        <h3>Intellectual Property</h3>
+        <p>Protect AI-driven innovations with patent analysis, drafting, and strategy.</p>
+        <ul>
+          <li><strong>IP Strategy:</strong> AI assesses patent landscapes and risks.</li>
+          <li><strong>Risk Management:</strong> Minimizes infringement risks.</li>
+          <li><strong>Process Efficiency:</strong> Streamlines IP tasks.</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.ibb.co/S4gGtWNP/images-9.jpg" alt="Project Management" />
+        <h3>Project Management</h3>
+        <p>Leverage AI to monitor milestones, predict risks, and optimize R&D workflows.</p>
+        <ul>
+          <li><strong>Project Optimization:</strong> AI improves timelines and budget adherence.</li>
+          <li><strong>Risk Management:</strong> Identifies and mitigates risks.</li>
+          <li><strong>Efficiency:</strong> Streamlines workflows.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Styling -->
+<style>
+  .services-section {
+    padding: 60px 20px;
+    background: #f9f9ff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .services-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .service-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #005a87;
+  }
+
+  .service-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .service-card ul {
+    list-style: disc inside;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 0;
+  }
+
+  .service-card ul li {
+    margin-bottom: 8px;
+  }
+</style>
+
+
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" style="display: none;">
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="#home">Home</a>
+                <span class="separator">/</span>
+                <a href="#contact" class="active">Contact Us</a>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions about how our AI-driven services can transform your pharmaceutical or biotech research? Reach out to our team of experts today.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>thane , Mumbai , India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <a href="tel:88673941597">+91 8867394159</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <a href="mailto:reguluservices.com">admin@reguluservices.com</a>
+                            </div>
+                        </div>
+                       
+                        </div>
+                    </div>
+                </div>
+                                                                   <h1> A UNIT OF BRC </h1>
+                
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We're harnessing the potential of AI to transform the way we discover, develop, and deliver life-changing treatments in the pharmaceutical and biotechnology industries.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services" class="service-link">Drug Discovery</a></li>
+                    <li><a href="#services" class="service-link">Clinical Trials</a></li>
+                    <li><a href="#services" class="service-link">Data Analysis</a></li>
+                    <li><a href="#services" class="service-link">Precision Medicine</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> THANE,MUMBAI,INDIA</p>
+                <p><i class="fas fa-phone"></i> +91 8867394159</p>
+                <p><i class="fas fa-envelope"></i> admin@reguluservices.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 REGUKUS SERVICES. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Page Navigation
+        const sections = {
+            home: document.getElementById('home'),
+            about: document.getElementById('about'),
+            services: document.getElementById('services'),
+            contact: document.getElementById('contact')
+        };
+        
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            Object.values(sections).forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            if (sections[sectionId]) {
+                sections[sectionId].style.display = 'block';
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Update active nav link
+            navLinksAll.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Handle regular navigation
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('href').substring(1);
+                showSection(sectionId);
+                
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Handle service navigation within services page
+        const serviceMenuLinks = document.querySelectorAll('.service-menu-link');
+        
+        serviceMenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceId = link.getAttribute('href').substring(1);
+                showService(serviceId);
+                
+                // Update active service menu link
+                serviceMenuLinks.forEach(menuLink => {
+                    menuLink.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+        
+        function showService(serviceId) {
+            // Hide all service contents
+            const serviceContents = document.querySelectorAll('.service-content');
+            serviceContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show the selected service content
+            const selectedContent = document.getElementById(serviceId);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+        }
+        
+        // Initialize - show home section by default
+        showSection('home');
+        
+        // Handle hash in URL on page load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && sections[hash]) {
+                showSection(hash);
+                
+                // If on services page and there's a service hash
+                if (hash === 'services' && window.location.hash.includes('#')) {
+                    const serviceHash = window.location.hash.split('-')[1];
+                    if (serviceHash) {
+                        showService(serviceHash);
+                    }
+                }
+            }
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.benefit-card, .service-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
